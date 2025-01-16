@@ -1,0 +1,40 @@
+# DBT compiled files
+/target/
+
+# DBT logs
+/logs/
+
+# DBT database and local artifacts
+/.dbt/
+dbt_packages/
+
+# Jupyter Notebook checkpoints (if using notebooks)
+/.ipynb_checkpoints/
+
+# Python virtual environment
+/venv/
+/.env/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor-specific files
+.idea/
+.vscode/
+*.swp
+
+# Environment variables
+.env
+.env.*
+
+# Temporary files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.temp
+*.tmp
+
+# macOS system files
+.DS_Store
