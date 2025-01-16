@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: person
+    schema: lh_gcsql_person
+    description: Placeholder.
+    database: lh_adventureworks
+    tables:
+      - name: address
+        description: Placeholder
+        columns:
+          - name: addressid
+            description: Primary for address records.
+            tests:
+              - unique
+              - not_null
