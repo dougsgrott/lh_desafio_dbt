@@ -119,3 +119,12 @@ sources:
               - unique
               - not_null
 
+      - name: store
+        description: Customers (resellers) of Adventure Works products.
+        columns:
+          - name: businessentityid
+            description: Primary key. Foreign key to Customer.BusinessEntityID.
+            tests:
+              - unique
+              - not_null
+
