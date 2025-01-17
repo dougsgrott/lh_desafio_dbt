@@ -23,5 +23,22 @@ sources:
             tests:
               - unique
               - not_null
-  
-  
+
+      - name: person
+        description: Human beings involved with AdventureWorks such as employees, customer contacts, and vendor contacts.
+        columns:
+          - name: businessentityid
+            description: Primary key for Person records.
+            tests:
+              - unique
+              - not_null
+
+      - name: stateprovince
+        description: State and province lookup table.
+        columns:
+          - name: stateprovinceid
+            description: Primary key for StateProvince records.
+            tests:
+              - unique
+              - not_null
+
