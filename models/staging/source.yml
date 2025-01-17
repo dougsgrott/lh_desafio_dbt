@@ -92,3 +92,12 @@ sources:
               - unique
               - not_null
 
+      - name: salesorderheader
+        description: General sales order information.
+        columns:
+          - name: salesorderid
+            description: Primary key.
+            tests:
+              - unique
+              - not_null
+
