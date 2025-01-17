@@ -1,0 +1,38 @@
+version: 2
+
+models:
+    - name: dim_customer
+      description: Model with customer id, full name and additional information about customers.
+      columns:
+
+          - name: sk_customer
+            description: Surrogate key for dim_customer
+            tests:
+                - unique
+                - not_null
+
+          - name: customer_id
+            description: Unique customer identity number.
+            tests:
+                - unique
+                - not_null
+
+          - name: person_id
+            description: Person identification.
+            tests:
+                - not_null
+
+          - name: store_id
+            description: Store identification.
+            tests:
+                - not_null
+
+          - name: full_name
+            description: Customer's full name.
+            tests:
+                - not_null
+
+          - name: store_name
+            description: Store name.
+            tests:
+                - not_null
