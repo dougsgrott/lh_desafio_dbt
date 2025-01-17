@@ -1,0 +1,39 @@
+version: 2
+
+models:
+    - name: dim_region
+      description: Model with regional data, such as address, postal code and territorial/provincial/country/state information.
+      columns:
+
+          - name: sk_region
+            description: Surrogate key for Region table
+            tests:
+                - unique
+                - not_null
+
+          - name: address_id
+            description: Primary key for Address records.
+
+          - name: addressline_full
+            description: Full street address line.
+
+          - name: city
+            description: Name of the city.
+
+          - name: postalcode
+            description: Postal code for the street address.
+
+          - name: territory_id
+            description: ID of the territory in which the state or province is located. Foreign key to SalesTerritory.SalesTerritoryID.
+
+          - name: is_province_flag
+            description: 0 = StateProvinceCode exists. 1 = StateProvinceCode unavailable, using CountryRegionCode.
+
+          - name: stateprovince_name
+            description: State or province description.
+
+          - name: country_code
+            description: ISO standard code for countries and regions.
+
+          - name: country_region_name
+            description: Country or region name.
