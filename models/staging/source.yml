@@ -110,3 +110,12 @@ sources:
               - unique
               - not_null
 
+      - name: salesreason
+        description: Lookup table of customer purchase reasons.
+        columns:
+          - name: salesreasonid
+            description: Primary key for SalesReason records.
+            tests:
+              - unique
+              - not_null
+
