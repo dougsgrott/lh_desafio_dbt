@@ -6,6 +6,7 @@ with
             , name as stateprovince_name
             , stateprovincecode as stateprovince_code
             , countryregioncode as countryregion_code
+            , isonlystateprovinceflag as is_province_flag
         from {{ source('person', 'stateprovince') }}
     )
 select *
