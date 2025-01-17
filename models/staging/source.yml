@@ -82,3 +82,13 @@ sources:
             tests:
               - unique
               - not_null
+
+      - name: salesorderdetail
+        description: Individual products associated with a specific sales order. See SalesOrderHeader.
+        columns:
+          - name: salesorderdetailid
+            description: Primary key. One incremental unique number per product sold.
+            tests:
+              - unique
+              - not_null
+
