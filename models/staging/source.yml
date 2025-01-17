@@ -66,3 +66,19 @@ sources:
             tests:
               - unique
               - not_null
+
+
+  - name: sales
+    schema: lh_gcsql_sales
+    description: Placeholder.
+    database: lh_adventureworks
+    tables:
+
+      - name: customer
+        description: Current customer information. Also see the Person and Store tables.
+        columns:
+          - name: customerid
+            description: Primary key.
+            tests:
+              - unique
+              - not_null
