@@ -101,3 +101,12 @@ sources:
               - unique
               - not_null
 
+      - name: salesorderheadersalesreason
+        description: Cross-reference table mapping sales orders to sales reason codes.
+        columns:
+          - name: "salesorderid || '-' || salesreasonid"
+            description: Composite key of the table.
+            tests:
+              - unique
+              - not_null
+
