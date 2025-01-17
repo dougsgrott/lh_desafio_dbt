@@ -1,0 +1,70 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: This table contains information regarding Product. 
+
+    columns:
+      - name: product_id
+        description: Primary key for Product records.
+        tests:
+          - unique
+          - not_null
+
+      - name: product_class
+        description: H = High, M = Medium, L = Low
+
+      - name: product_color
+        description: Product color.
+
+      - name: days_to_manufacture
+        description: Number of days required to manufacture the product.
+
+      - name: finished_goods_flag
+        description: 0 = Product is not a salable item. 1 = Product is salable.
+
+      - name: list_price
+        description: Selling price.
+
+      - name: product_name
+        description: Name of the product.
+        tests:
+          - not_null
+
+      - name: product_line
+        description: R = Road, M = Mountain, T = Touring, S = Standard
+
+      - name: product_model_id
+        description: Product is a member of this product model. Foreign key to ProductModel.ProductModelID.
+
+      - name: product_number
+        description: Unique product identification number.
+        tests:
+          - unique
+
+      - name: product_subcategory_id
+        description: Product is a member of this product subcategory. Foreign key to ProductSubCategory.ProductSubCategoryID. 
+
+      - name: sell_end_date
+        description: Date the product was no longer available for sale.
+
+      - name: sell_start_date
+        description: Date the product was available for sale.
+
+      - name: product_size
+        description: Product size.
+
+      - name: size_unit_measure_code
+        description: Unit of measure for Size column.
+        
+      - name: standard_cost
+        description: Standard cost of the product.
+
+      - name: product_style
+        description: W = Womens, M = Mens, U = Universal
+
+      - name: product_weight
+        description: Product weight.
+
+      - name: weight_unit_measure_code
+        description: Unit of measure for Weight column.
