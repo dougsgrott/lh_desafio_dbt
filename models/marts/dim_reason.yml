@@ -1,0 +1,20 @@
+version: 2
+
+models:
+    - name: dim_reason
+      description: Model with information regarding the sale's reason.
+      columns:
+
+          - name: sk_sales_order
+            description: Surrogate key for Reason table, but the same as the Primary key from Sales.SalesOrderHeaderSalesReason and Foreign key to SalesOrderHeader.SalesOrderID.
+            tests:
+                - not_null
+
+          - name: sales_reason_id
+            description: Primary key for SalesReason records.
+
+          - name: reason_name
+            description: Sales reason description.
+
+          - name: reason_type
+            description: Category the sales reason belongs to.
