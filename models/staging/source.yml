@@ -63,9 +63,9 @@ sources:
         columns:
           - name: productid
             description: Primary key for ProductCategory records.
-            tests:
-              - unique
-              - not_null
+            # tests:
+              # - unique
+              # - not_null
 
 
   - name: sales

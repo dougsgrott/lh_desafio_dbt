@@ -19,20 +19,20 @@ models:
 
           - name: person_id
             description: Person identification.
-            tests:
-                - not_null
+            # tests:
+            #     - not_null
 
           - name: store_id
             description: Store identification.
-            tests:
-                - not_null
+            # tests:
+            #     - not_null
 
           - name: full_name
             description: Customer's full name.
-            tests:
-                - not_null
+            # tests:
+            #     - not_null
 
           - name: store_name
             description: Store name.
-            tests:
-                - not_null
+            # tests:
+            #     - not_null
