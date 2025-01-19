@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: dim_datascience1
+    description: Table primarily created to be used in questions 8 and 9 from the Lighthouse challenge (Data Science questions). 
+
+    columns:
+      - name: sales_order_id
+        description: 
+        tests:
+          - unique
+          - not_null
