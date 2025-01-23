@@ -25,7 +25,7 @@ with
             , countryregion.country_region_code
             , countryregion.country_region_name
         from address
-        left join stateprovince on address.state_province_id = stateprovince.stateprovince_id
+        left join stateprovince on address.stateprovince_id = stateprovince.stateprovince_id
         left join countryregion on stateprovince.countryregion_code = countryregion.country_region_code
 )
 
