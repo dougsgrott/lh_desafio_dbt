@@ -6,7 +6,6 @@ models:
 
     columns:
       - name: sales_order_id
-        description: 
+        description: ''
         tests:
-          - unique
           - not_null

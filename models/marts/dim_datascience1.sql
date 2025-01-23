@@ -1,11 +1,11 @@
 with
-    store as (
-        select *
-        from {{ ref('stg_sales__store') }}
-    )
-    , customer as (
+    customer as (
         select *
         from {{ ref('stg_sales__customer') }}
+    )
+    , store as (
+        select *
+        from {{ ref('stg_sales__store') }}
     )
     , salesorderheader as (
         select *
@@ -22,6 +22,18 @@ with
     , salesterritory as (
         select *
         from {{ ref('stg_sales__salesterritory') }}
+    )
+    , stateprovince as (
+        select *
+        from {{ ref('stg_person__stateprovince') }}
+    )
+    , countryregion as (
+        select *
+        from {{ ref('stg_person__countryregion') }}
+    )
+    , address as (
+        select *
+        from {{ ref('stg_person__address') }}
     )
 
 
@@ -95,12 +107,39 @@ with
             , salesterritory.cost_ytd
             , salesterritory.cost_last_year
 
-        from salesorderdetail
-        left join salesorderheader on salesorderdetail.sales_order_id = salesorderheader.sales_order_id
-        left join product on product.product_id = salesorderdetail.product_id
-        left join customer on salesorderheader.customer_id = customer.customer_id
-        left join store on store.business_entity_id = customer.store_id
-        left join salesterritory on salesorderheader.territory_id = salesterritory.territory_id
-)
+            , stateprovince.stateprovince_id
+            -- , stateprovince.territory_id
+            , stateprovince.stateprovince_name
+            , stateprovince.stateprovince_code
+            , stateprovince.countryregion_code
+            , stateprovince.is_province_flag
+
+            -- , countryregion.country_region_code
+            , countryregion.country_region_name
+
+            , bill_to_addr.address_id
+            -- , bill_to_addr.stateprovince_id
+            , bill_to_addr.addressline_full
+            , bill_to_addr.city
+            , bill_to_addr.postalcode
+
+        from salesorderheader
+        join salesorderdetail 
+            on salesorderheader.sales_order_id = salesorderdetail.sales_order_id
+        join product 
+            on salesorderdetail.product_id = product.product_id
+        join customer 
+            on salesorderheader.customer_id = customer.customer_id
+        left join store 
+            on customer.store_id = store.business_entity_id
+        join salesterritory 
+            on salesorderheader.territory_id = salesterritory.territory_id
+        join address bill_to_addr
+            on salesorderheader.bill_to_address_id = bill_to_addr.address_id
+        join stateprovince 
+            on bill_to_addr.stateprovince_id = stateprovince.stateprovince_id
+        join countryregion 
+            on stateprovince.countryregion_code = countryregion.country_region_code
+    )
 
 select * from dim_datascience1
