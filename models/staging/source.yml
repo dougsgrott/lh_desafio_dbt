@@ -136,3 +136,12 @@ sources:
             tests:
               - unique
               - not_null
+
+      - name: creditcard
+        description: Customer credit card information.
+        columns:
+          - name: creditcardid
+            description: Primary key for CreditCard records.
+            tests:
+              - unique
+              - not_null
